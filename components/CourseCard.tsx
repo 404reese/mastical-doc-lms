@@ -4,6 +4,7 @@ import { Course } from "@/lib/courses-data";
 import { Clock, Users, Star, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
+import Link from "next/link";
 
 interface CourseCardProps {
   course: Course;
@@ -19,12 +20,13 @@ export default function CourseCard({ course, index }: CourseCardProps) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="bg-white rounded-xl border-2 border-gray-100 hover:border-teal-300 hover:shadow-xl transition-all overflow-hidden group cursor-pointer h-full flex flex-col"
-    >
+    <Link href={`/courses/${course.id}`} className="block h-full">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.05 }}
+        className="bg-white rounded-xl border-2 border-gray-100 hover:border-teal-300 hover:shadow-xl transition-all overflow-hidden group cursor-pointer h-full flex flex-col"
+      >
       <div className="relative h-48 overflow-hidden">
         <img
           src={course.image}
@@ -88,5 +90,6 @@ export default function CourseCard({ course, index }: CourseCardProps) {
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 }

@@ -6,8 +6,11 @@ export interface Course {
   id: string;
   title: string;
   description: string;
+  fullDescription: string;
   instructor: string;
   instructorTitle: string;
+  instructorBio: string;
+  instructorImage: string;
   price: number;
   duration: string;
   level: CourseLevel;
@@ -17,15 +20,36 @@ export interface Course {
   studentsEnrolled: number;
   image: string;
   features: string[];
+  introVideo: string;
+  curriculum: CourseModule[];
+  tags: string[];
+  totalLectures: number;
+  certificateAvailable: boolean;
 }
 
-export const coursesData: Course[] = [
+export interface CourseModule {
+  id: string;
+  title: string;
+  lessons: CourseLesson[];
+}
+
+export interface CourseLesson {
+  id: string;
+  title: string;
+  duration: string;
+  isPreview: boolean;
+}
+
+const rawCoursesData = [
   {
     id: "1",
     title: "Advanced Cardiac Surgery Techniques",
     description: "Master cutting-edge cardiac surgical procedures with hands-on simulations and expert guidance from leading cardiothoracic surgeons.",
+    fullDescription: "This comprehensive course offers an in-depth exploration of advanced cardiac surgical techniques, designed for experienced surgeons looking to enhance their skills in the rapidly evolving field of cardiothoracic surgery. Through a combination of theoretical knowledge, hands-on simulations, and live case studies, participants will master cutting-edge procedures including minimally invasive cardiac surgery, robotic-assisted procedures, and complex valve repairs. The curriculum covers the latest innovations in surgical technology, patient selection criteria, risk assessment, and post-operative care protocols. Led by world-renowned cardiac surgeons, this program provides access to state-of-the-art simulation labs and live surgical demonstrations from leading medical centers worldwide.",
     instructor: "Dr. Sarah Johnson",
     instructorTitle: "Chief Cardiothoracic Surgeon",
+    instructorBio: "Dr. Sarah Johnson is a world-renowned cardiothoracic surgeon with over 20 years of experience in complex cardiac procedures. She has performed over 3,000 cardiac surgeries and is a pioneer in minimally invasive cardiac surgery techniques. Dr. Johnson is currently the Chief of Cardiothoracic Surgery at Johns Hopkins Hospital and has authored over 150 peer-reviewed publications.",
+    instructorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=400",
     price: 899,
     duration: "12 weeks",
     level: "Advanced",
@@ -34,14 +58,41 @@ export const coursesData: Course[] = [
     rating: 4.9,
     studentsEnrolled: 1240,
     image: "https://images.pexels.com/photos/3845810/pexels-photo-3845810.jpeg?auto=compress&cs=tinysrgb&w=800",
-    features: ["3D Surgical Simulations", "Live Case Reviews", "CME Credits", "Certificate"]
+    features: ["3D Surgical Simulations", "Live Case Reviews", "CME Credits", "Certificate"],
+    introVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    curriculum: [
+      {
+        id: "module-1",
+        title: "Fundamentals of Advanced Cardiac Surgery",
+        lessons: [
+          { id: "lesson-1-1", title: "Introduction to Advanced Techniques", duration: "45 min", isPreview: true },
+          { id: "lesson-1-2", title: "Surgical Planning and Risk Assessment", duration: "60 min", isPreview: false },
+          { id: "lesson-1-3", title: "Patient Selection Criteria", duration: "40 min", isPreview: false }
+        ]
+      },
+      {
+        id: "module-2", 
+        title: "Minimally Invasive Procedures",
+        lessons: [
+          { id: "lesson-2-1", title: "Port-Access Cardiac Surgery", duration: "75 min", isPreview: false },
+          { id: "lesson-2-2", title: "Robotic-Assisted Surgery", duration: "90 min", isPreview: false },
+          { id: "lesson-2-3", title: "Endoscopic Techniques", duration: "65 min", isPreview: false }
+        ]
+      }
+    ],
+    tags: ["Cardiac Surgery", "Advanced Techniques", "Minimally Invasive", "Robotic Surgery"],
+    totalLectures: 24,
+    certificateAvailable: true
   },
   {
     id: "2",
     title: "Pediatric Emergency Care",
     description: "Comprehensive training in pediatric emergency medicine covering trauma, respiratory distress, and critical care protocols.",
+    fullDescription: "This intensive course provides healthcare professionals with essential skills in pediatric emergency medicine. Covering critical scenarios from neonates to adolescents, participants will learn rapid assessment techniques, life-saving interventions, and evidence-based treatment protocols. The curriculum includes hands-on simulation training, case-based learning, and interactive workshops led by experienced pediatric emergency physicians.",
     instructor: "Dr. Michael Chen",
     instructorTitle: "Pediatric Emergency Specialist",
+    instructorBio: "Dr. Michael Chen is a board-certified pediatric emergency medicine physician with 15 years of experience. He serves as the Director of Pediatric Emergency Services at Children's Hospital of Philadelphia and has trained hundreds of healthcare providers in pediatric emergency care.",
+    instructorImage: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=400",
     price: 749,
     duration: "8 weeks",
     level: "Intermediate",
@@ -50,7 +101,21 @@ export const coursesData: Course[] = [
     rating: 4.8,
     studentsEnrolled: 2150,
     image: "https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=800",
-    features: ["Case Studies", "Emergency Protocols", "CME Credits", "Certificate"]
+    features: ["Case Studies", "Emergency Protocols", "CME Credits", "Certificate"],
+    introVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    curriculum: [
+      {
+        id: "module-1",
+        title: "Pediatric Assessment and Triage",
+        lessons: [
+          { id: "lesson-1-1", title: "Rapid Pediatric Assessment", duration: "30 min", isPreview: true },
+          { id: "lesson-1-2", title: "Triage Protocols for Children", duration: "45 min", isPreview: false }
+        ]
+      }
+    ],
+    tags: ["Pediatrics", "Emergency Medicine", "Critical Care", "Trauma"],
+    totalLectures: 18,
+    certificateAvailable: true
   },
   {
     id: "3",
@@ -214,6 +279,30 @@ export const coursesData: Course[] = [
   }
 ];
 
+// Helper function to add default values for incomplete courses
+const addDefaultValues = (course: any): Course => ({
+  ...course,
+  fullDescription: course.fullDescription || course.description + " This course provides comprehensive training with hands-on experience and expert instruction to help you master the essential concepts and practical skills needed in this field.",
+  instructorBio: course.instructorBio || `${course.instructor} is an experienced medical professional with extensive expertise in ${course.category.toLowerCase()}. With years of clinical practice and teaching experience, they bring real-world insights to help students understand complex medical concepts.`,
+  instructorImage: course.instructorImage || "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=400",
+  introVideo: course.introVideo || "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  curriculum: course.curriculum || [
+    {
+      id: "module-1",
+      title: "Introduction and Fundamentals",
+      lessons: [
+        { id: "lesson-1-1", title: "Course Overview", duration: "30 min", isPreview: true },
+        { id: "lesson-1-2", title: "Basic Concepts", duration: "45 min", isPreview: false }
+      ]
+    }
+  ],
+  tags: course.tags || [course.category, course.level],
+  totalLectures: course.totalLectures || 12,
+  certificateAvailable: course.certificateAvailable !== undefined ? course.certificateAvailable : true
+});
+
 export const levels: CourseLevel[] = ["Beginner", "Intermediate", "Advanced"];
 export const categories: CourseCategory[] = ["Surgery", "Pediatrics", "Cardiology", "Neurology", "Radiology", "Emergency Medicine", "Internal Medicine", "Orthopedics"];
 export const languages: CourseLanguage[] = ["Bulgarian", "English", "French", "German", "Hindi", "Hungarian", "Portuguese", "Romanian", "Russian", "Spanish"];
+
+export const coursesData: Course[] = rawCoursesData.map(addDefaultValues);

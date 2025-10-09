@@ -84,7 +84,7 @@ export default function CoursesPage() {
                     onClick={() => setSelectedLevel("All")}
                     className={`px-4 py-2 rounded-full font-medium transition-all text-sm ${
                       selectedLevel === "All"
-                        ? "bg-teal-500 text-white shadow-md"
+                        ? "bg-blue-500 text-white shadow-md"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                   >
@@ -96,7 +96,7 @@ export default function CoursesPage() {
                       onClick={() => setSelectedLevel(level)}
                       className={`px-4 py-2 rounded-full font-medium transition-all text-sm ${
                         selectedLevel === level
-                          ? "bg-teal-500 text-white shadow-md"
+                          ? "bg-blue-500 text-white shadow-md"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       }`}
                     >
@@ -146,7 +146,7 @@ export default function CoursesPage() {
                     onClick={() => setSelectedLanguage("All")}
                     className={`px-4 py-2 rounded-full font-medium transition-all text-sm ${
                       selectedLanguage === "All"
-                        ? "bg-green-500 text-white shadow-md"
+                        ? "bg-blue-500 text-white shadow-md"
                         : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                   >
@@ -158,7 +158,7 @@ export default function CoursesPage() {
                       onClick={() => setSelectedLanguage(language)}
                       className={`px-4 py-2 rounded-full font-medium transition-all text-sm ${
                         selectedLanguage === language
-                          ? "bg-green-500 text-white shadow-md"
+                          ? "bg-blue-500 text-white shadow-md"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       }`}
                     >

@@ -27,11 +27,12 @@ export default function Navbar() {
 
   const currentLang = languageOptions.find(l => l.code === language) || languageOptions[1];
 
-  const navLinks = [
+  const navLinks: Array<{ href: string; label: string; isAdmin?: boolean }> = [
     { href: "/", label: t.home },
     { href: "/courses", label: t.courses },
-    { href: "#about", label: t.about },
-    { href: "#contact", label: t.contact },
+    // { href: "#about", label: t.about },
+    // { href: "#contact", label: t.contact },
+    { href: "/admin", label: "Admin", isAdmin: true },
   ];
 
   return (
@@ -50,10 +51,16 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
+                className={`${
+                  link.isAdmin 
+                    ? "text-orange-600 hover:text-orange-700 font-semibold" 
+                    : "text-gray-700 hover:text-blue-600 font-medium"
+                } transition-colors relative group`}
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${
+                  link.isAdmin ? "bg-orange-600" : "bg-blue-600"
+                } group-hover:w-full transition-all duration-300`}></span>
               </Link>
             ))}
             <div className="relative">
@@ -117,7 +124,11 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-2 text-gray-700 hover:text-blue-600 font-medium"
+                className={`block py-2 ${
+                  link.isAdmin 
+                    ? "text-orange-600 hover:text-orange-700 font-semibold" 
+                    : "text-gray-700 hover:text-blue-600 font-medium"
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
