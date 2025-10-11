@@ -38,6 +38,8 @@ export interface CourseLesson {
   title: string;
   duration: string;
   isPreview: boolean;
+  videoUrl: string;
+  description?: string;
 }
 
 const rawCoursesData = [
@@ -65,18 +67,60 @@ const rawCoursesData = [
         id: "module-1",
         title: "Fundamentals of Advanced Cardiac Surgery",
         lessons: [
-          { id: "lesson-1-1", title: "Introduction to Advanced Techniques", duration: "45 min", isPreview: true },
-          { id: "lesson-1-2", title: "Surgical Planning and Risk Assessment", duration: "60 min", isPreview: false },
-          { id: "lesson-1-3", title: "Patient Selection Criteria", duration: "40 min", isPreview: false }
+          { 
+            id: "lesson-1-1", 
+            title: "Introduction to Advanced Techniques", 
+            duration: "45 min", 
+            isPreview: true,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            description: "Overview of advanced cardiac surgical techniques and their applications"
+          },
+          { 
+            id: "lesson-1-2", 
+            title: "Surgical Planning and Risk Assessment", 
+            duration: "60 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+            description: "Comprehensive approach to pre-operative planning and patient risk stratification"
+          },
+          { 
+            id: "lesson-1-3", 
+            title: "Patient Selection Criteria", 
+            duration: "40 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+            description: "Evidence-based criteria for selecting appropriate candidates for advanced procedures"
+          }
         ]
       },
       {
         id: "module-2", 
         title: "Minimally Invasive Procedures",
         lessons: [
-          { id: "lesson-2-1", title: "Port-Access Cardiac Surgery", duration: "75 min", isPreview: false },
-          { id: "lesson-2-2", title: "Robotic-Assisted Surgery", duration: "90 min", isPreview: false },
-          { id: "lesson-2-3", title: "Endoscopic Techniques", duration: "65 min", isPreview: false }
+          { 
+            id: "lesson-2-1", 
+            title: "Port-Access Cardiac Surgery", 
+            duration: "75 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+            description: "Minimally invasive approaches using port-access techniques"
+          },
+          { 
+            id: "lesson-2-2", 
+            title: "Robotic-Assisted Surgery", 
+            duration: "90 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+            description: "State-of-the-art robotic systems and their clinical applications"
+          },
+          { 
+            id: "lesson-2-3", 
+            title: "Endoscopic Techniques", 
+            duration: "65 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+            description: "Advanced endoscopic approaches for cardiac interventions"
+          }
         ]
       }
     ],
@@ -108,8 +152,44 @@ const rawCoursesData = [
         id: "module-1",
         title: "Pediatric Assessment and Triage",
         lessons: [
-          { id: "lesson-1-1", title: "Rapid Pediatric Assessment", duration: "30 min", isPreview: true },
-          { id: "lesson-1-2", title: "Triage Protocols for Children", duration: "45 min", isPreview: false }
+          { 
+            id: "lesson-1-1", 
+            title: "Rapid Pediatric Assessment", 
+            duration: "30 min", 
+            isPreview: true,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
+            description: "Learn systematic approaches to rapidly assess pediatric patients"
+          },
+          { 
+            id: "lesson-1-2", 
+            title: "Triage Protocols for Children", 
+            duration: "45 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+            description: "Evidence-based triage systems for pediatric emergency departments"
+          }
+        ]
+      },
+      {
+        id: "module-2",
+        title: "Pediatric Life Support",
+        lessons: [
+          { 
+            id: "lesson-2-1", 
+            title: "Basic Life Support in Children", 
+            duration: "40 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+            description: "Age-appropriate BLS techniques and protocols"
+          },
+          { 
+            id: "lesson-2-2", 
+            title: "Advanced Pediatric Life Support", 
+            duration: "55 min", 
+            isPreview: false,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+            description: "Advanced interventions and medication dosing in pediatric emergencies"
+          }
         ]
       }
     ],
@@ -121,8 +201,11 @@ const rawCoursesData = [
     id: "3",
     title: "Diagnostic Radiology Fundamentals",
     description: "Learn to interpret X-rays, CT scans, and MRIs with confidence through systematic image analysis techniques.",
+    fullDescription: "Master the art of diagnostic imaging with this comprehensive course designed for medical professionals seeking to enhance their radiology interpretation skills. Through systematic approaches to image analysis, hands-on practice with real cases, and AI-assisted learning tools, participants will gain confidence in reading X-rays, CT scans, and MRIs across various medical specialties.",
     instructor: "Dr. Emily Rodriguez",
     instructorTitle: "Head of Radiology",
+    instructorBio: "Dr. Emily Rodriguez is a board-certified radiologist with 12 years of experience in diagnostic imaging. She leads the radiology department at Mayo Clinic and has published extensively on imaging interpretation techniques.",
+    instructorImage: "https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=400",
     price: 649,
     duration: "10 weeks",
     level: "Beginner",
@@ -131,7 +214,35 @@ const rawCoursesData = [
     rating: 4.7,
     studentsEnrolled: 980,
     image: "https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=800",
-    features: ["Image Analysis", "AI-Assisted Learning", "CME Credits", "Certificate"]
+    features: ["Image Analysis", "AI-Assisted Learning", "CME Credits", "Certificate"],
+    introVideo: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    curriculum: [
+      {
+        id: "module-1",
+        title: "Introduction to Diagnostic Imaging",
+        lessons: [
+          { 
+            id: "lesson-1-1", 
+            title: "Fundamentals of X-ray Interpretation", 
+            duration: "35 min", 
+            isPreview: true,
+            videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4",
+            description: "Basic principles and systematic approach to X-ray interpretation"
+          },
+          { 
+            id: "lesson-1-2", 
+            title: "Normal Anatomy on Imaging", 
+            duration: "50 min", 
+            isPreview: false,
+            videoUrl: "https://www.youtube.com/embed/TLf5OASKf18",
+            description: "Recognizing normal anatomical structures across different imaging modalities"
+          }
+        ]
+      }
+    ],
+    tags: ["Radiology", "Imaging", "X-ray", "CT", "MRI"],
+    totalLectures: 15,
+    certificateAvailable: true
   },
   {
     id: "4",

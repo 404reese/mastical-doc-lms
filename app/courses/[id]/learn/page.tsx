@@ -1,0 +1,26 @@
+import { notFound } from "next/navigation";
+import { coursesData } from "@/lib/courses-data";
+import LearningInterface from "@/components/LearningInterface";
+
+// Generate static params for all course IDs
+export async function generateStaticParams() {
+  return coursesData.map((course) => ({
+    id: course.id,
+  }));
+}
+
+interface LearnPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function LearnPage({ params }: LearnPageProps) {
+  const course = coursesData.find(c => c.id === params.id);
+
+  if (!course) {
+    notFound();
+  }
+
+  return <LearningInterface course={course} />;
+}

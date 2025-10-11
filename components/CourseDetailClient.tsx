@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { 
   Play, 
   Clock, 
@@ -19,16 +19,30 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useEnrollment } from "@/lib/enrollment-context";
 
 interface CourseDetailClientProps {
   course: Course;
 }
 
 export default function CourseDetailClient({ course }: CourseDetailClientProps) {
+  const router = useRouter();
+  const { isEnrolled, enrollInCourse } = useEnrollment();
+  
+  const enrolled = isEnrolled(course.id);
+  
   const levelColors = {
     Beginner: "bg-green-100 text-green-700 border-green-300",
     Intermediate: "bg-blue-100 text-blue-700 border-blue-300",
     Advanced: "bg-purple-100 text-purple-700 border-purple-300",
+  };
+
+  const handleEnrollment = () => {
+    if (!enrolled) {
+      enrollInCourse(course.id, course.totalLectures);
+    }
+    // Navigate to learning interface
+    router.push(`/courses/${course.id}/learn`);
   };
 
   return (
@@ -141,13 +155,27 @@ export default function CourseDetailClient({ course }: CourseDetailClientProps) 
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg mb-3">
+                  <Button 
+                    onClick={handleEnrollment}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 text-lg mb-3"
+                  >
                     <GraduationCap className="h-5 w-5 mr-2" />
-                    Enroll Now
+                    {enrolled ? "Continue Learning" : "Enroll Now"}
                   </Button>
-                  <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
-                    Add to Wishlist
-                  </Button>
+                  {!enrolled && (
+                    <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                      Add to Wishlist
+                    </Button>
+                  )}
+                  {enrolled && (
+                    <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded-lg">
+                      <div className="flex items-center gap-2 text-green-700">
+                        <CheckCircle className="h-4 w-4" />
+                        <span className="text-sm font-medium">Enrolled</span>
+                      </div>
+                      <p className="text-xs text-green-600 mt-1">You have access to all course materials</p>
+                    </div>
+                  )}
                   
                   {/* What's Included */}
                   <div className="mt-6 pt-6 border-t border-gray-200">
