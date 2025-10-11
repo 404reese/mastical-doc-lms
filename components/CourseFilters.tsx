@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, BookOpen, Globe } from "lucide-react";
+import { Clock, BookOpen, Globe, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type FilterType = "level" | "category" | "language";
 
@@ -182,6 +183,16 @@ export default function CourseFilters() {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="mt-16 text-center">
+          <Link
+            href={`/courses?${activeFilter}=${selectedOption}`}
+            className="group inline-flex items-center justify-center gap-2 bg-transparent text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-all font-semibold text-lg border-2 border-blue-600"
+          >
+            See All Courses
+            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
       </div>
     </section>
   );

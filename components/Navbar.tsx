@@ -30,6 +30,7 @@ export default function Navbar() {
   const navLinks: Array<{ href: string; label: string; isAdmin?: boolean }> = [
     { href: "/", label: t.home },
     { href: "/courses", label: t.courses },
+    { href: "/forum", label: t.forums },
     // { href: "#about", label: t.about },
     // { href: "#contact", label: t.contact },
     { href: "/admin", label: "Admin", isAdmin: true },

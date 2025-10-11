@@ -3,6 +3,7 @@ export type Language = "bg" | "en" | "fr" | "de" | "hi" | "hu" | "pt" | "ro" | "
 export interface Translations {
   home: string;
   courses: string;
+  forums: string;
   about: string;
   contact: string;
   getStarted: string;
@@ -63,6 +64,7 @@ export const translations: Record<Language, Translations> = {
   en: {
     home: "Home",
     courses: "Courses",
+    forums: "Forums",
     about: "About",
     contact: "Contact",
     getStarted: "Get Started",
