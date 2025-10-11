@@ -13,6 +13,7 @@ import {
   CourseCategory,
   CourseLanguage,
 } from "@/lib/courses-data";
+import Footer from "@/components/Footer";
 
 export default function CoursesPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -216,6 +217,7 @@ export default function CoursesPage() {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 }
