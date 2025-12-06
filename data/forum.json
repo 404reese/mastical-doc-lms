@@ -1,0 +1,167 @@
+{
+    "topics": {
+        "general-discussion": {
+            "id": "general-discussion",
+            "title": "General Discussion",
+            "description": "A place for general chat about medical topics, news, and trends.",
+            "memberCount": 1247,
+            "members": [
+                {
+                    "id": 1,
+                    "name": "Dr. Emily Carter",
+                    "avatar": "https://ui-avatars.com/api/?name=Emily+Carter&background=3b82f6&color=fff",
+                    "role": "Moderator",
+                    "joinDate": "2023-01-15"
+                },
+                {
+                    "id": 2,
+                    "name": "Dr. Ben Adams",
+                    "avatar": "https://ui-avatars.com/api/?name=Ben+Adams&background=3b82f6&color=fff",
+                    "role": "Member",
+                    "joinDate": "2023-03-22"
+                },
+                {
+                    "id": 3,
+                    "name": "Dr. Sofia Reyes",
+                    "avatar": "https://ui-avatars.com/api/?name=Sofia+Reyes&background=3b82f6&color=fff",
+                    "role": "Member",
+                    "joinDate": "2023-02-10"
+                },
+                {
+                    "id": 4,
+                    "name": "Dr. Michael Chen",
+                    "avatar": "https://ui-avatars.com/api/?name=Michael+Chen&background=3b82f6&color=fff",
+                    "role": "Member",
+                    "joinDate": "2023-04-05"
+                },
+                {
+                    "id": 5,
+                    "name": "Dr. Sarah Johnson",
+                    "avatar": "https://ui-avatars.com/api/?name=Sarah+Johnson&background=3b82f6&color=fff",
+                    "role": "Admin",
+                    "joinDate": "2023-01-01"
+                }
+            ],
+            "posts": [
+                {
+                    "id": 1,
+                    "authorId": 1,
+                    "author": "Dr. Emily Carter",
+                    "avatar": "https://ui-avatars.com/api/?name=Emily+Carter&background=3b82f6&color=fff",
+                    "time": "2 hours ago",
+                    "timestamp": "2025-12-06T10:48:00Z",
+                    "title": "Latest Research on GLP-1 Agonists",
+                    "content": "Has anyone seen the latest research on GLP-1 agonists for weight management? The results from the SELECT trial are quite impressive. It seems like we're on the cusp of a major shift in how we manage obesity and cardiovascular risk. Would love to hear your thoughts on implementing this in clinical practice.",
+                    "upvotes": 156,
+                    "downvotes": 12,
+                    "commentCount": 24,
+                    "shareCount": 8,
+                    "tags": [
+                        "Research",
+                        "Cardiology",
+                        "Endocrinology"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "authorId": 2,
+                    "author": "Dr. Ben Adams",
+                    "avatar": "https://ui-avatars.com/api/?name=Ben+Adams&background=3b82f6&color=fff",
+                    "time": "1 hour ago",
+                    "timestamp": "2025-12-06T11:48:00Z",
+                    "title": "Cardiovascular Benefits Discussion",
+                    "content": "I agree with the recent discussions on GLP-1 agonists. The cardiovascular benefits are particularly noteworthy. I'm curious to see how this will be integrated into primary care guidelines. The cost and availability are still significant barriers for many of my patients. What strategies are others using to address these access issues?",
+                    "upvotes": 89,
+                    "downvotes": 5,
+                    "commentCount": 15,
+                    "shareCount": 3,
+                    "tags": [
+                        "Primary Care",
+                        "Cardiology"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "authorId": 3,
+                    "author": "Dr. Sofia Reyes",
+                    "avatar": "https://ui-avatars.com/api/?name=Sofia+Reyes&background=3b82f6&color=fff",
+                    "time": "45 minutes ago",
+                    "timestamp": "2025-12-06T12:03:00Z",
+                    "title": "AI in Diagnostic Imaging - Your Experiences?",
+                    "content": "On a different note, what are your thoughts on the increasing use of AI in diagnostic imaging? We've started using a new algorithm for mammogram analysis, and it's been surprisingly accurate in detecting early-stage malignancies. The sensitivity is around 94% compared to our previous 87%. Has anyone else integrated AI tools into their radiology workflow?",
+                    "upvotes": 234,
+                    "downvotes": 18,
+                    "commentCount": 42,
+                    "shareCount": 15,
+                    "tags": [
+                        "AI",
+                        "Radiology",
+                        "Technology"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "authorId": 4,
+                    "author": "Dr. Michael Chen",
+                    "avatar": "https://ui-avatars.com/api/?name=Michael+Chen&background=3b82f6&color=fff",
+                    "time": "3 hours ago",
+                    "timestamp": "2025-12-06T09:48:00Z",
+                    "title": "Burnout Prevention Strategies",
+                    "content": "Let's talk about physician burnout. I've noticed increasing stress levels among colleagues, especially post-pandemic. What strategies has your institution implemented to support physician wellness? We recently introduced mandatory mental health days and peer support groups - would love to hear what's working elsewhere.",
+                    "upvotes": 187,
+                    "downvotes": 8,
+                    "commentCount": 31,
+                    "shareCount": 12,
+                    "tags": [
+                        "Wellness",
+                        "Mental Health",
+                        "Administration"
+                    ]
+                },
+                {
+                    "id": 5,
+                    "authorId": 5,
+                    "author": "Dr. Sarah Johnson",
+                    "avatar": "https://ui-avatars.com/api/?name=Sarah+Johnson&background=3b82f6&color=fff",
+                    "time": "5 hours ago",
+                    "timestamp": "2025-12-06T07:48:00Z",
+                    "title": "New CPR Guidelines 2025",
+                    "content": "The updated CPR guidelines were just released. Major changes include increased emphasis on early defibrillation and updated compression depth recommendations. All healthcare providers should review these changes. I'm planning a training session next week - any interest in a virtual study group to discuss the updates?",
+                    "upvotes": 312,
+                    "downvotes": 7,
+                    "commentCount": 56,
+                    "shareCount": 28,
+                    "tags": [
+                        "Emergency Medicine",
+                        "Guidelines",
+                        "Training"
+                    ]
+                }
+            ]
+        },
+        "case-studies": {
+            "id": "case-studies",
+            "title": "Case Studies",
+            "description": "Share and discuss interesting clinical cases.",
+            "memberCount": 892,
+            "members": [],
+            "posts": []
+        },
+        "career-advice": {
+            "id": "career-advice",
+            "title": "Career Advice",
+            "description": "Get guidance on medical careers, specialties, and professional development.",
+            "memberCount": 654,
+            "members": [],
+            "posts": []
+        },
+        "research-and-innovations": {
+            "id": "research-and-innovations",
+            "title": "Research and Innovations",
+            "description": "Discuss the latest medical research and innovative treatments.",
+            "memberCount": 1103,
+            "members": [],
+            "posts": []
+        }
+    }
+}
