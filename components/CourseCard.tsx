@@ -32,7 +32,7 @@ export default function CourseCard({ course, index }: CourseCardProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: index * 0.05 }}
-        className="bg-white rounded-xl border-2 border-gray-100 hover:border-teal-300 hover:shadow-xl transition-all overflow-hidden group cursor-pointer h-full flex flex-col"
+        className="bg-white rounded-xl border-2 border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all overflow-hidden group cursor-pointer h-full flex flex-col"
       >
       <div className="relative h-48 overflow-hidden">
         <img
@@ -57,7 +57,7 @@ export default function CourseCard({ course, index }: CourseCardProps) {
 
       <div className="p-6 flex flex-col flex-grow">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-xs bg-teal-50 text-teal-700 px-2 py-1 rounded-full font-medium border border-teal-200">
+          <span className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full font-medium border border-blue-200">
             {course.category}
           </span>
           <span className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full font-medium border border-blue-200">
@@ -65,7 +65,7 @@ export default function CourseCard({ course, index }: CourseCardProps) {
           </span>
         </div>
 
-        <h3 className="text-lg font-bold text-blue-900 mb-2 group-hover:text-teal-600 transition-colors line-clamp-2">
+        <h3 className="text-lg font-bold text-blue-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
           {course.title}
         </h3>
 

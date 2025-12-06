@@ -136,8 +136,8 @@ export default function CourseFilters() {
                   onClick={() => setSelectedOption(option.id)}
                   className={`px-5 py-2 rounded-full font-medium transition-all ${
                     selectedOption === option.id
-                      ? "bg-teal-50 text-teal-700 border-2 border-teal-400"
-                      : "bg-white text-gray-700 border-2 border-gray-200 hover:border-teal-300"
+                      ? "bg-blue-50 text-blue-700 border-2 border-blue-400"
+                      : "bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-300"
                   }`}
                 >
                   {option.name} <span className="text-sm opacity-75">({option.count})</span>
@@ -159,10 +159,10 @@ export default function CourseFilters() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white rounded-xl border-2 border-gray-100 hover:border-teal-300 hover:shadow-xl transition-all overflow-hidden group cursor-pointer"
+              className="bg-white rounded-xl border-2 border-gray-100 hover:border-blue-300 hover:shadow-xl transition-all overflow-hidden group cursor-pointer"
             >
-              <div className="h-48 bg-gradient-to-br from-teal-500 to-blue-600 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=400')] bg-cover bg-center opacity-20"></div>
+              <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-600 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=400')] bg-cover bg-center opacity-70"></div>
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-blue-600">
                   ⭐ {course.rating}
                 </div>

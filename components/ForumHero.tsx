@@ -5,7 +5,7 @@ import { MessageSquare, Search } from "lucide-react";
 
 export default function ForumHero() {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-teal-50">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50">
       <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-5"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
@@ -18,7 +18,7 @@ export default function ForumHero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-block mb-6 px-4 py-2 bg-teal-50 text-teal-700 rounded-full text-sm font-semibold border border-teal-200"
+            className="inline-block mb-6 px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-semibold border border-blue-200"
           >
             <MessageSquare className="inline-block h-5 w-5 mr-2" />
             Community Discussions

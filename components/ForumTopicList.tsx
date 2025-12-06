@@ -17,7 +17,7 @@ const topics = [
     id: "case-studies",
     title: "Case Studies",
     description: "Share and discuss interesting or challenging clinical cases.",
-    icon: <BookOpen className="h-8 w-8 text-teal-600" />,
+    icon: <BookOpen className="h-8 w-8 text-blue-600" />,
     posts: 74,
     members: 2100,
   },

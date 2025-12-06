@@ -46,7 +46,7 @@ export default function CoursesPage() {
   const hasActiveFilters = selectedLevel !== "All" || selectedCategory !== "All" || selectedLanguage !== "All" || searchQuery !== "";
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-teal-50/20 to-white pt-24 pb-16">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-blue-50/20 to-white pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ export default function CoursesPage() {
               placeholder="Search courses, instructors..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-teal-400 focus:outline-none transition-colors text-lg shadow-sm"
+              className="w-full pl-12 pr-4 py-4 border-2 border-gray-200 rounded-xl focus:border-blue-400 focus:outline-none transition-colors text-lg shadow-sm"
             />
           </div>
 
@@ -183,9 +183,9 @@ export default function CoursesPage() {
             )}
           </div>
 
-          <div className="flex items-center justify-between mb-6 bg-teal-50 rounded-lg px-6 py-4 border-2 border-teal-200">
+          <div className="flex items-center justify-between mb-6 bg-blue-50 rounded-lg px-6 py-4 border-2 border-blue-200">
             <p className="text-lg">
-              <span className="font-bold text-teal-700 text-2xl">{filteredCourses.length}</span>
+              <span className="font-bold text-blue-700 text-2xl">{filteredCourses.length}</span>
               <span className="text-gray-700 ml-2">courses found</span>
             </p>
           </div>

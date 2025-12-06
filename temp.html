@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddhesh | Full Stack Engineer & Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7', // The "Medical/Premium" Blue
+                            900: '#0c4a6e',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(14, 165, 233, 0.1)',
+                        'card': '0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)',
+                        'card-hover': '0 0 0 1px rgba(14, 165, 233, 0.2), 0 12px 32px -8px rgba(14, 165, 233, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { -webkit-font-smoothing: antialiased; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 70% 0%, #f0f9ff 0%, #ffffff 60%);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 bg-white selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                    <div class="w-2 h-8 bg-brand-600 rounded-full"></div>
+                    Riddhesh.
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#work" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Selected Work</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">About</a>
+                    <a href="#expertise" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Expertise</a>
+                </div>
+
+                <a href="mailto:riddhesh.chaudhary@gmail.com" class="hidden md:inline-flex items-center px-5 py-2 border border-slate-200 text-sm font-medium rounded-full text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 hero-gradient">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-semibold tracking-wide uppercase mb-6 border border-brand-100">
+                        <span class="w-2 h-2 rounded-full bg-brand-600 mr-2 animate-pulse"></span> Available for projects
+                    </div>
+                    
+                    <h1 class="text-5xl lg:text-7xl font-bold text-slate-900 tracking-tight mb-6 leading-[1.1]">
+                        Computer Engineer & <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-cyan-500">Product Creator.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-500 mb-8 max-w-lg leading-relaxed font-light">
+                        I bridge the gap between complex engineering and minimal design. Currently building <strong>MASTICAL</strong> and pursuing dual degrees at IIT Madras & KJSIT.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#work" class="px-8 py-3.5 bg-brand-600 text-white rounded-full font-medium hover:bg-brand-500 shadow-lg shadow-brand-500/20 transition-all hover:-translate-y-1">
+                            View Selected Work
+                        </a>
+                        <a href="https://github.com" target="_blank" class="px-8 py-3.5 bg-white text-slate-700 border border-slate-200 rounded-full font-medium hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-github text-lg"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Minimal Visual/Image -->
+                <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-md aspect-square">
+                        <!-- Abstract bg elements matching the "medical" clean feel -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+                        <div class="absolute bottom-0 left-0 w-64 h-64 bg-cyan-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+                        
+                        <!-- Profile Image (Placeholder for Riddhesh) -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white rotate-3 hover:rotate-0 transition-all duration-500">
+                            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1000&auto=format&fit=crop" alt="Riddhesh Portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar (Clean Trust Signals) -->
+    <div class="border-y border-slate-100 bg-white">
+        <div class="max-w-7xl mx-auto px-6 py-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-100">
+                <div class="pl-4">
+                    <div class="text-3xl font-bold text-brand-600">04</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Years Experience</div>
+                </div>
+                <div class="pl-8">
+                    <div class="text-3xl font-bold text-brand-600">Dual</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Bachelor Degrees</div>
+                </div>
+                <div class="pl-8">
+                    <div class="text-3xl font-bold text-brand-600">10+</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Projects Shipped</div>
+                </div>
+                <div class="pl-8">
+                    <div class="text-3xl font-bold text-brand-600">100%</div>
+                    <div class="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Commitment</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Selected Work Section -->
+    <section id="work" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Selected Work</h2>
+                    <p class="text-slate-500 max-w-xl">A collection of projects ranging from full-stack applications to AI integrations.</p>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700 mt-4 md:mt-0">
+                    View All Projects <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="group bg-white rounded-2xl p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <div class="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="E-commerce">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Minimal E-commerce</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">A modern platform built for seamless shopping experiences with advanced SEO integration.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">Wordpress</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">SEO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white rounded-2xl p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <div class="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="IoT">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Smart Trash Tracker</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">IoT-enabled waste monitoring system with real-time data visualization via mobile app.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">Flutter</span>
+                            <span class="px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">IoT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-white rounded-2xl p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <div class="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="LMS">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Centralized LMS</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">A comprehensive Learning Management System for students with virtual memory management modules.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">NextJS</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group bg-white rounded-2xl p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <div class="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Video Gen">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">AI Video Generator</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">Converts text scripts into educational videos using mathematical animation libraries.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">FastAPI</span>
+                            <span class="px-3 py-1 bg-brand-50 text-brand-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">Manim</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="group bg-white rounded-2xl p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <div class="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Transcript">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Automated Transcript</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">A self-hosted platform for generating accurate transcripts from audio sources.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">Flask</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project 6 -->
+                 <div class="group bg-white rounded-2xl p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <div class="aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden mb-6 relative">
+                        <img src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Timetable">
+                    </div>
+                    <div class="px-2">
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Time Table Generator</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-2">Automated scheduling system for educational institutions.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">Java</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-[10px] font-semibold uppercase tracking-wide">Algorithm</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Split Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Collage -->
+                <div class="relative">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-slate-100 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover" alt="Travel">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 w-1/2 aspect-square rounded-2xl overflow-hidden shadow-card border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover" alt="Working">
+                    </div>
+                </div>
+
+                <!-- Bio Content -->
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">About Riddhesh</h2>
+                    <h3 class="text-lg text-brand-600 font-medium mb-6">Digital Nomad. Engineer. Inquisitive Mind.</h3>
+                    
+                    <div class="space-y-6 text-slate-500 leading-relaxed font-light">
+                        <p>
+                            I'm an engineer turned self-taught designer, mostly because I've always been more fascinated by the <span class="text-slate-900 font-medium">"why"</span> behind things than just the "how."
+                        </p>
+                        <p>
+                            I help startups understand their users better and use that insight to make smarter product decisions. My philosophy is simple: build stuff that actually works, not just looks good.
+                        </p>
+                        
+                        <div class="p-6 bg-slate-50 rounded-xl border border-slate-100 mt-8">
+                            <h4 class="font-bold text-slate-900 mb-3 text-sm uppercase tracking-wide">Side Quests & Interests</h4>
+                            <p class="text-sm">
+                                When not coding, I'm likely binge-watching Netflix or backpacking. Currently exploring Southeast Asia and experimenting to see if the digital nomad life fits me.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise / Skills (Clean Grid) -->
+    <section id="expertise" class="py-24 bg-brand-50/30 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Technical Proficiency</h2>
+                <p class="text-slate-500">A versatile toolbelt built over 4 years of engineering.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300">
+                    <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 mb-4">
+                        <i class="fa-brands fa-js text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">JavaScript Ecosystem</h4>
+                    <p class="text-sm text-slate-500">React, Next.js, Vue.js, Node.js, Express, TypeScript</p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300">
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+                        <i class="fa-brands fa-python text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Python Development</h4>
+                    <p class="text-sm text-slate-500">Django, Flask, FastAPI, Scripting & Data Processing</p>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300">
+                    <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 mb-4">
+                        <i class="fa-brands fa-java text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Java Backend</h4>
+                    <p class="text-sm text-slate-500">Spring Boot, Quarkus, Enterprise Applications</p>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300">
+                    <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-600 mb-4">
+                        <i class="fa-solid fa-server text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">DevOps & Cloud</h4>
+                    <p class="text-sm text-slate-500">AWS, GCP, Docker, Kubernetes, Firebase</p>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300">
+                    <div class="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600 mb-4">
+                        <i class="fa-solid fa-mobile-screen text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Mobile & Cross-Platform</h4>
+                    <p class="text-sm text-slate-500">Flutter for iOS/Android, Responsive Web Apps</p>
+                </div>
+
+                <!-- Skill Card 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-card hover:shadow-soft transition-all duration-300">
+                    <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 mb-4">
+                        <i class="fa-solid fa-database text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 mb-2">Data & ORMs</h4>
+                    <p class="text-sm text-slate-500">PostgreSQL, MongoDB, Redis, SQL, Prisma ORM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            
+            <h2 class="text-3xl font-bold mb-6">Open for Opportunities</h2>
+            <p class="text-brand-100 max-w-2xl mx-auto mb-10 text-lg font-light">
+                Ready to build something meaningful? Let's discuss how I can help bring your ideas to life.
+            </p>
+
+            <div class="inline-flex items-center bg-brand-800 rounded-full p-1 pl-6 mb-12 border border-brand-700">
+                <span class="text-brand-100 mr-4 font-mono text-sm">riddhesh.chaudhary@gmail.com</span>
+                <a href="mailto:riddhesh.chaudhary@gmail.com" class="bg-brand-500 hover:bg-brand-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors">
+                    Copy Email
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="#" class="text-brand-200 hover:text-white transition-colors"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                <a href="#" class="text-brand-200 hover:text-white transition-colors"><i class="fa-brands fa-github text-2xl"></i></a>
+                <a href="#" class="text-brand-200 hover:text-white transition-colors"><i class="fa-brands fa-youtube text-2xl"></i></a>
+                <a href="#" class="text-brand-200 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-2xl"></i></a>
+            </div>
+
+            <div class="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-300">
+                <p>&copy; 2025 Riddhesh. Built with passion & coffee.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <span>Mumbai, India</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,4 +1,3 @@
-
 import { notFound } from "next/navigation";
 import { coursesData } from "@/lib/courses-data";
 import CourseDetailClient from "@/components/CourseDetailClient";
@@ -11,13 +10,16 @@ export async function generateStaticParams() {
 }
 
 interface CourseDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function CourseDetailPage({ params }: CourseDetailPageProps) {
-  const course = coursesData.find(c => c.id === params.id);
+export default async function CourseDetailPage({ params }: CourseDetailPageProps) {
+  const { id } = await params;
+  console.log("Looking for course id:", id);
+  const course = coursesData.find(c => c.id === id);
+  console.log("Found course:", course ? course.title : "Not Found");
 
   if (!course) {
     notFound();

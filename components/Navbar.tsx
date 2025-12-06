@@ -6,26 +6,36 @@ import { Menu, X, GraduationCap, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 import { Language } from "@/lib/translations";
+import BG from "country-flag-icons/react/3x2/BG";
+import GB from "country-flag-icons/react/3x2/GB";
+import FR from "country-flag-icons/react/3x2/FR";
+import DE from "country-flag-icons/react/3x2/DE";
+import IN from "country-flag-icons/react/3x2/IN";
+import HU from "country-flag-icons/react/3x2/HU";
+import PT from "country-flag-icons/react/3x2/PT";
+import RO from "country-flag-icons/react/3x2/RO";
+import RU from "country-flag-icons/react/3x2/RU";
+import ES from "country-flag-icons/react/3x2/ES";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-  const [scrolled, setScrolled] = useState(false); 
+  const [scrolled, setScrolled] = useState(false);
 
-  const languageOptions: { code: Language; label: string; flag: string }[] = [
-    { code: "bg", label: "Български", flag: "🇧🇬" },
-    { code: "en", label: "English", flag: "🇬🇧" },
-    { code: "fr", label: "Français", flag: "🇫🇷" },
-    { code: "de", label: "Deutsch", flag: "🇩🇪" },
-    { code: "hi", label: "हिंदी", flag: "🇮🇳" },
-    { code: "hu", label: "Magyar", flag: "🇭🇺" },
-    { code: "pt", label: "Português", flag: "🇵🇹" },
-    { code: "ro", label: "Română", flag: "🇷🇴" },
-    { code: "ru", label: "Русский", flag: "🇷🇺" },
-    { code: "es", label: "Español", flag: "🇪🇸" },
+  const languageOptions: { code: Language; label: string; FlagComponent: React.ComponentType<{ className?: string }> }[] = [
+    { code: "bg", label: "Български", FlagComponent: BG },
+    { code: "en", label: "English", FlagComponent: GB },
+    { code: "fr", label: "Français", FlagComponent: FR },
+    { code: "de", label: "Deutsch", FlagComponent: DE },
+    { code: "hi", label: "हिंदी", FlagComponent: IN },
+    { code: "hu", label: "Magyar", FlagComponent: HU },
+    { code: "pt", label: "Português", FlagComponent: PT },
+    { code: "ro", label: "Română", FlagComponent: RO },
+    { code: "ru", label: "Русский", FlagComponent: RU },
+    { code: "es", label: "Español", FlagComponent: ES },
   ];
-  
+
 
   const currentLang = languageOptions.find(l => l.code === language) || languageOptions[1];
 
@@ -66,16 +76,14 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`${
-                  link.isAdmin 
-                    ? "text-orange-600 hover:text-orange-700 font-semibold" 
-                    : "text-gray-700 hover:text-blue-600 font-medium"
-                } transition-colors relative group`}
+                className={`${link.isAdmin
+                  ? "text-orange-600 hover:text-orange-700 font-semibold"
+                  : "text-gray-700 hover:text-blue-600 font-medium"
+                  } transition-colors relative group`}
               >
                 {link.label}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${
-                  link.isAdmin ? "bg-orange-600" : "bg-blue-600"
-                } group-hover:w-full transition-all duration-300`}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 ${link.isAdmin ? "bg-orange-600" : "bg-blue-600"
+                  } group-hover:w-full transition-all duration-300`}></span>
               </Link>
             ))}
             <div className="relative">
@@ -84,7 +92,8 @@ export default function Navbar() {
                 className="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <Globe className="h-5 w-5 text-blue-600" />
-                <span className="text-xl">{currentLang.flag}</span>
+                <currentLang.FlagComponent className="w-6 h-4" />
+                <span className="text-sm font-semibold text-gray-700 uppercase">{currentLang.code}</span>
               </button>
               {showLangMenu && (
                 <motion.div
@@ -99,11 +108,11 @@ export default function Navbar() {
                         setLanguage(lang.code);
                         setShowLangMenu(false);
                       }}
-                      className={`w-full text-left px-4 py-2 hover:bg-blue-50 transition-colors flex items-center gap-3 ${
-                        language === lang.code ? "bg-blue-50 font-semibold" : ""
-                      }`}
+                      className={`w-full text-left px-4 py-2 hover:bg-blue-50 transition-colors flex items-center gap-3 ${language === lang.code ? "bg-blue-50 font-semibold" : ""
+                        }`}
                     >
-                      <span className="text-xl">{lang.flag}</span>
+                      <lang.FlagComponent className="w-6 h-4" />
+                      <span className="text-xs font-bold text-blue-600 uppercase min-w-[2rem]">{lang.code}</span>
                       <span>{lang.label}</span>
                     </button>
                   ))}
@@ -139,11 +148,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block py-2 ${
-                  link.isAdmin 
-                    ? "text-orange-600 hover:text-orange-700 font-semibold" 
-                    : "text-gray-700 hover:text-blue-600 font-medium"
-                }`}
+                className={`block py-2 ${link.isAdmin
+                  ? "text-orange-600 hover:text-orange-700 font-semibold"
+                  : "text-gray-700 hover:text-blue-600 font-medium"
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -160,13 +168,13 @@ export default function Navbar() {
                         setLanguage(lang.code);
                         setIsOpen(false);
                       }}
-                      className={`px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${
-                        language === lang.code
-                          ? "bg-blue-100 text-blue-700 font-semibold"
-                          : "bg-gray-50 hover:bg-gray-100"
-                      }`}
+                      className={`px-3 py-2 rounded-lg text-sm transition-colors flex items-center gap-2 ${language === lang.code
+                        ? "bg-blue-100 text-blue-700 font-semibold"
+                        : "bg-gray-50 hover:bg-gray-100"
+                        }`}
                     >
-                      <span>{lang.flag}</span>
+                      <lang.FlagComponent className="w-5 h-3" />
+                      <span className="text-xs font-bold uppercase">{lang.code}</span>
                       <span className="text-xs">{lang.label}</span>
                     </button>
                   ))}

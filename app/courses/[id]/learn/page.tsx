@@ -10,13 +10,14 @@ export async function generateStaticParams() {
 }
 
 interface LearnPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function LearnPage({ params }: LearnPageProps) {
-  const course = coursesData.find(c => c.id === params.id);
+export default async function LearnPage({ params }: LearnPageProps) {
+  const { id } = await params;
+  const course = coursesData.find(c => c.id === id);
 
   if (!course) {
     notFound();

@@ -28,7 +28,7 @@ const features = [
 
 export default function WhyTrustUs() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-t from-blue-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ export default function WhyTrustUs() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-gradient-to-br from-teal-50/30 via-blue-50/50 to-white p-8 rounded-2xl border border-blue-100 hover:border-teal-300 transition-all hover:shadow-xl h-full">
+              <div className="bg-white p-8 rounded-2xl border border-blue-100 hover:border-blue-300 transition-all hover:shadow-xl h-full">
                 <div className="bg-blue-600 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <feature.icon className="h-7 w-7 text-white" />
                 </div>

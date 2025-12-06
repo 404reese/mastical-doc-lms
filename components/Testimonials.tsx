@@ -56,7 +56,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white via-teal-50/20 to-blue-50">
+    <section className="py-20 bg-gradient-to-b from-white via-blue-50/20 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <Quote className="h-8 w-8 text-teal-200 mb-4" />
+              <Quote className="h-8 w-8 text-blue-200 mb-4" />
 
               <p className="text-gray-700 mb-6 leading-relaxed">
                 "{testimonial.text}"

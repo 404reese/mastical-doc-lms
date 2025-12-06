@@ -28,7 +28,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-50 via-teal-50/20 to-white">
+    <section className="py-20 bg-gradient-to-b from-blue-50 via-blue-50/20 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,8 +56,8 @@ export default function Features() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group"
             >
-              <div className="bg-white p-6 rounded-2xl border-2 border-blue-100 hover:border-teal-400 transition-all hover:shadow-xl h-full flex flex-col items-center text-center">
-                <div className="bg-gradient-to-br from-teal-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+              <div className="bg-white p-6 rounded-2xl border-2 border-blue-100 hover:border-blue-400 transition-all hover:shadow-xl h-full flex flex-col items-center text-center">
+                <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-blue-900 mb-3">

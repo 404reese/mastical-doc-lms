@@ -57,7 +57,7 @@ export default function AdminDashboard() {
       description: "See how your courses appear to students",
       href: "/courses",
       icon: Eye,
-      color: "bg-teal-600 hover:bg-teal-700",
+      color: "bg-blue-600 hover:bg-blue-700",
     },
   ];
 
